@@ -145,7 +145,7 @@ $(document).on("change", "select.category1", function(){
    <p style="font-weight: bold">상품소개</p>
    <textarea rows="5" cols="62" id="gdsDes" name="gdsDes" required="required"></textarea>
 
-   <script>
+   <script type="text/javascript">
  var ckeditor_config = {
    resize_enaleb : false,
    enterMode : CKEDITOR.ENTER_BR,

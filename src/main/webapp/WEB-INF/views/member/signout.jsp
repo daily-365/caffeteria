@@ -12,6 +12,6 @@ $(document).ready(function(){
 location.href='${pageContext.request.contextPath}/';
 
 
-})
+});
  
  </script>

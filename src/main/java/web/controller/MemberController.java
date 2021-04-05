@@ -74,12 +74,15 @@ public class MemberController {
 	 MemberDTO login = service.signin(member);  
 	 HttpSession session = req.getSession();
 	 
-	 boolean passMatch = member.getUserPass().equals(login.getUserPass());
-			 
-			passEncoder.matches(member.getUserPass(), login.getUserPass());
+	 boolean passMatch = passEncoder.matches(member.getUserPass(), login.getUserPass());
 	 
 	 if(login != null && passMatch ) {
 	  session.setAttribute("member", login);
+	  
+	  //verify
+	  session.setAttribute("verify",member.getVerify());
+	  
+	  
 	 } else {
 	  session.setAttribute("member", null);
 	  rttr.addFlashAttribute("msg", false);
@@ -91,11 +94,11 @@ public class MemberController {
 	  
 	// 로그아웃
 	@RequestMapping(value = "/signout", method = RequestMethod.GET)
-	public String signout(HttpSession session) throws Exception {
+	public void signout(HttpSession session) throws Exception {
 	 logger.info("get logout");
 	 
 	 service.signout(session);
 	   
-	 return "redirect:/";
+	 
 	}
 }

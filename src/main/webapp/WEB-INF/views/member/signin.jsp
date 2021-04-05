@@ -42,13 +42,18 @@
 <button type="button" class="btn btn-danger col-sm-2" 
 onclick="javasceript: location.href='${pageContext.request.contextPath}/member/signup'">회원가입</button>
 
-<c:if test="${msg == false }">
+<c:if test="${msg eq false }">
 <script type="text/javascript">
 alert('아이디와 비밀번호를 확인해 주세요.');
 </script>
 
 </c:if>
 
+<c:if test="${member.verify eq 1 }">
+<script type="text/javascript">
+location.href="/admin/index";
+</script>
+</c:if>
 
 </form>
 
