@@ -13,7 +13,11 @@
     
  <script type="text/javascript" src="/../../resources/js/jquery-3.5.1.min.js"></script>
  <script type="text/javascript" src="/../../resources/ckeditor/ckeditor.js"></script>
- 
+
+  <!-- ck 에디터 js-->
+  
+  <script src="/resources/ckeditor/ckeditor.js"></script>
+  
  <div class="container-fluid">
  
   <br><br>
@@ -96,12 +100,7 @@ $(document).on("change", "select.category1", function(){
  
  var cate2Select = $("select.category2");
  
- /*
- for(var i = 0; i < cate2Arr.length; i++) {
-   cate2Select.append("<option value='" + cate2Arr[i].cateCode + "'>"
-        + cate2Arr[i].cateName + "</option>");
- }
- */
+
  
  cate2Select.children().remove();
 
@@ -145,7 +144,7 @@ $(document).on("change", "select.category1", function(){
    <div class="form-group col-sm-4 col-sm-offset-4">
    <p style="font-weight: bold">상품소개</p>
    <textarea rows="5" cols="62" id="gdsDes" name="gdsDes" required="required"></textarea>
-<%--      <%=request.getRealPath("/") %>  --%>
+
    <script>
  var ckeditor_config = {
    resize_enaleb : false,

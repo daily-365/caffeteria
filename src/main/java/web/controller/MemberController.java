@@ -33,7 +33,7 @@ public class MemberController {
 	    return new BCryptPasswordEncoder();
 	}
 	
-
+    @Autowired(required=false)
 	BCryptPasswordEncoder passEncoder;
 
 	
@@ -50,12 +50,14 @@ public class MemberController {
 	 logger.info("post signup");
 	  
 	
-	  String inputPass = member.getUserPass(); String pass = passEncoder.encode(inputPass); member.setUserPass(pass);
+	  String inputPass = member.getUserPass(); 
+	  String pass = passEncoder.encode(inputPass);
+	  member.setUserPass(pass);
 		
 
 	 service.signup(member);
 
-	 return "redirect:/";
+	 return "redirect:/member/signin";
 	}
 	
 	// 로그인  get
