@@ -79,9 +79,6 @@ public class MemberController {
 	 if(login != null && passMatch ) {
 	  session.setAttribute("member", login);
 	  
-	  //verify
-	  session.setAttribute("verify",member.getVerify());
-	  
 	  
 	 } else {
 	  session.setAttribute("member", null);

@@ -59,11 +59,18 @@ $('.dropdown-toggle').dropdown()
      
  </c:if>
     
+ <c:if test="${member.verify eq 1 }">
+ <script type="text/javascript">
+ 
+   location.href='/admin/index';
+ 
+ </script>
+</c:if>
+
     
    <c:if test="${member ne null }">
    
-     
-  
+       
        <script type="text/javascript">
       alert('${member.userName}님 환영합니다.');
        </script>

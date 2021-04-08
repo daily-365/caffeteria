@@ -49,11 +49,7 @@ alert('아이디와 비밀번호를 확인해 주세요.');
 
 </c:if>
 
-<c:if test="${member.verify eq 1 }">
-<script type="text/javascript">
-location.href="/admin/index";
-</script>
-</c:if>
+
 
 </form>
 

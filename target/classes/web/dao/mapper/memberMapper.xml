@@ -19,6 +19,7 @@
  from
      tbl_member
  where userId = #{userId}
+   
 </select>
 
 </mapper>
